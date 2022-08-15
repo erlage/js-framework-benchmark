@@ -262,7 +262,7 @@ async function runBench(frameworkNames: string[]) {
       setButtonsInShadowRoot(framework.buttonsInShadowRoot);
 
       await driver.get(`http://${config.HOST}:${config.PORT}/${framework.uri}/index.html`);
-      await testElementLocatedById(driver, "add", config.TIMEOUT, true);
+      await testElementLocatedById(driver, "append", config.TIMEOUT, true);
       await clickElementById(driver, "run", true);
       await testTextContains(driver, "//tbody/tr[1000]/td[1]", "1000", config.TIMEOUT, false);
 
